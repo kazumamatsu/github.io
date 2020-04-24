@@ -19,8 +19,9 @@ img {
 }
 
 .wrapper {
-    margin: 0 auto;
-    padding: 0 4%;
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 4%;
 }
 /* 大きな背景画像 */
 .big-bg {
@@ -40,11 +41,11 @@ img {
 
 /* ボタン */
 .button {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     border-radius: 50px;
-    padding: 15px 30px;
+    padding: 12.5px 20px;
 }
 .button:hover {
     color: rgba(100, 100, 100);
@@ -90,10 +91,10 @@ img {
 .main-nav a:hover {
     color: rgb(214, 214, 214);
 }
-.sns_logo{
+.sns-logo{
   display: flex;
 }
-.sns_logo img{
+.sns-logo img{
   min-width: 20px;
   width: 20px;
   height: auto;
@@ -135,13 +136,12 @@ img {
   display: flex;
 }
 .home-buttons a{
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 .home-button1{
-  font-size: 1.15rem;
   color: rgb(255, 255, 255);
   border-radius: 50px;
-  padding: 15px 30px;
+  padding: 12.5px 20px;
 }
 .home-button1:hover {
     text-decoration: underline;
@@ -165,12 +165,49 @@ img {
     padding-top: 100px;
     text-align: center;
 }
+#profile .page-title a{
+    color: rgb(0, 0, 0);
+}
+.profile-contents {
+  margin:0 100px 10px;
+  text-align: left;
+}
+.profile-contents li{
+  list-style: none;
+  font-size: 18px;
+}
+.profile-contents a{
+  color: rgb(30, 100, 140);
+}
+.profile-contents a:hover{
+
+  text-decoration: underline;
+}
+.profile-contents hr{
+  margin: 10px 0;
+}
+.name{
+  display: grid;
+}
+.name h3{
+  font-size: 40px;
+}
+.name h4{
+  font-size: 30px;
+}
+.name h5{
+  font-size: 20px;
+}
+.sub-title{
+  font-size: 20px;
+  font-weight: bold;
+}
 
 /*footer
 -----------------------*/
 footer {
   text-align: center;
-  margin-top: 10px;
+  margin-top: auto;
   padding: 5px;
 }
 footer hr{
