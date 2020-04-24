@@ -34,7 +34,7 @@ img {
     font-size: 4rem;
     font-family: "Philosopher", serif;
     font-weight: normal;
-    color : rgb(255, 255, 255);
+    color : rgb(0, 0, 0);
 }
 
 
@@ -43,7 +43,7 @@ img {
     font-size: 1.375rem;
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    border-radius: 5px;
+    border-radius: 50px;
     padding: 18px 32px;
 }
 .button:hover {
@@ -102,7 +102,11 @@ img {
     margin-top: auto;
     padding-top: 15%;
 }
-.home-content h2 {
+.home-content .page-title {
+    font-size: 4rem;
+    font-family: "Philosopher", serif;
+    font-weight: normal;
+    color : rgb(255, 255, 255);
     margin-top: 40px;
 }
 .home-content p {
@@ -110,11 +114,39 @@ img {
     font-size: 1.25rem;
     margin-bottom: 30px;
 }
+.home-buttons{
+  display: flex;
+}
+.home-buttons a{
+    font-size: 1rem;
+}
+.home-button1{
+  font-size: 1.375rem;
+  color: rgb(255, 255, 255);
+  border-radius: 50px;
+  padding: 18px 32px;
+}
+.home-button1:hover {
+    text-decoration: underline;
+}
+
 .pad {
   height: auto;
   width: 500px;
   min-width: 500px;
   margin: 0 auto;
+}
+
+/* NEWS
+------------------------------- */
+#profile {
+    background: linear-gradient(to right top, rgb(207, 46, 146), rgb(242, 105, 57));
+    height: 250px;
+    margin-bottom: 40px;
+}
+#profile .page-title {
+    padding-top: 100px;
+    text-align: center;
 }
 
 /*footer
