@@ -4,231 +4,288 @@
 ----------------------------*/
 
 html {
-  font-size: 100%;
+	font-size: 100%;
 }
 body {
-    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
-    line-height: 1.7;
-    background: rgb(245, 245, 247);
+	font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+	line-height: 1.7;
+	background: rgb(245, 245, 247);
 }
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 img {
-  max-width: 100%;
+
+	max-width: 100%;
 }
 
 .wrapper {
-  max-width: 1900px;
-  margin: 0 auto;
-  padding: 0 4%;
+	max-width: 1900px;
+	margin: 0 auto;
+	padding: 0 4%;
 }
 /* 大きな背景画像 */
 .big-bg {
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
 }
 
 /* 見出し */
 .page-title {
-    font-size: 3rem;
-    font-family: "Philosopher", serif;
-    font-weight: normal;
-    color : rgb(0, 0, 0);
+	font-size: 3rem;
+	font-family: "Philosopher", serif;
+	font-weight: normal;
+	color : rgb(0, 0, 0);
 }
 
 
 /* ボタン */
 .button {
-    font-size: 1.5rem;
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 50px;
-    padding: 12.5px 20px;
+	font-size: 1.5rem;
+	background: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	border-radius: 50px;
+	padding: 12.5px 20px;
 }
 .button:hover {
-    color: rgba(100, 100, 100);
-    background: rgba(255, 255, 255, 0.75);
+	color: rgba(100, 100, 100);
+	background: rgba(255, 255, 255, 0.75);
 }
 
 
 /*header
 ---------------------*/
 .page-header {
-  background: rgb(51, 51, 51);
-  display: flex;
-  padding-top: 3px;
-  justify-content: center;
-  position: fixed;
-  width: 100%;
+	background: rgb(51, 51, 51);
+	position: fixed;
+	width: 100%;
+	height: 44px;
+	margin-top: 0px;
 }
-
-.logo {
-  min-width: 170px;
-  list-style: none;
-  margin-top: 2px;
+.header-main{
+	margin: 0 auto;
+	max-width: 980px;
+	padding: 0px 22px 0;
+	position: relative;
 }
-.logo img{
- width: 170px;
- height: auto;
-}
-.main-nav {
-  display: flex;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  list-style: none;
+.main-nav{
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	margin-top: 0;
 }
 .main-menu{
-  padding-top: 5px;
+	text-align: center;
+	padding-top: 0px;
+	margin: auto;
 }
-.main-nav li {
-  margin: 1px 20px;
+.main-logo{
+	margin-top: 5.2px;
 }
-.main-nav a {
-  color: rgb(165, 165, 165);
+.menu-logo {
+	margin: 0px;
+	padding: 10px 10px 13px;
+}
+.menu-logo img{
+	min-width: 150px;
+	width: 150px;
+	height: auto;
+	vertical-align: middle;
+}
+.main-moji{
+	margin-top: 6px;
+}
+.menu-elements{
+	color: rgb(165, 165, 165);
+	margin: 0px;
+	padding: 15px 10px 13px;
+	font-size: 0.85rem;
+	vertical-align: middle;
 }
 .main-nav a:hover {
-    color: rgb(214, 214, 214);
+	color: rgb(214, 214, 214);
 }
-.sns-logo{
-  display: flex;
+.main-sns{
+	margin-top: 5px;
 }
-.sns-logo img{
-  min-width: 20px;
-  width: 20px;
-  height: auto;
-  margin: 6px 0px;
+.menu-sns-logo{
+	padding: 10px 10px 10px;
 }
-.instagram img{
-  min-width: 30px;
-  width: 30px;
-  margin: 0px;
+.menu-sns-logo img{
+	width: 30px;
+	min-width: 30px;
+	vertical-align: middle;
 }
 
 /* home
 ------------------------------- */
 #home {
-    background: linear-gradient(to right top,rgb(200, 10, 210),rgb(0, 160, 255));
-    min-height: 100vh;
+	background: linear-gradient(to right top,rgb(207, 46, 146),rgb(0, 160, 255));
+	min-height: 100vh;
 }
 
 .home-content {
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    margin-top: auto;
-    padding-top: 15%;
+	display: flex;
+	justify-content: center;
+	text-align: left;
+	margin-top: auto;
+	padding-top: 15%;
 }
 .home-content .page-title {
-    font-size: 3.5rem;
-    font-family: "Philosopher", serif;
-    font-weight: normal;
-    color : rgb(255, 255, 255);
-    margin-top: 40px;
+	font-size: 3.5rem;
+	font-family: "Philosopher", serif;
+	font-weight: normal;
+	color : rgb(255, 255, 255);
+	margin-top: 40px;
 }
 .home-content p {
-    color: rgb(255, 255, 255);
-    font-size: 1.25rem;
-    margin-bottom: 30px;
+	color: rgb(255, 255, 255);
+	font-size: 1.25rem;
+	margin-bottom: 30px;
 }
 .home-buttons{
-  display: flex;
+	display: flex;
 }
 .home-buttons a{
-    font-size: 1.25rem;
+	font-size: 1.25rem;
 }
 .home-button1{
-  color: rgb(255, 255, 255);
-  border-radius: 50px;
-  padding: 12.5px 20px;
+	color: rgb(255, 255, 255);
+	border-radius: 50px;
+	padding: 12.5px 20px;
 }
 .home-button1:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .pad {
-  height: auto;
-  width: 500px;
-  min-width: 500px;
-  margin: 0 auto;
+	height: auto;
+	width: 500px;
+	min-width: 500px;
+	margin: 0 auto;
 }
 
 /* NEWS
 ------------------------------- */
 #profile {
-    background: linear-gradient(to right top, rgb(207, 46, 146), rgb(242, 105, 57));
-    height: 250px;
-    margin-bottom: 40px;
+	background: linear-gradient(to right top, rgb(0, 160, 255), rgb(0, 245, 50));
+	height: 250px;
+	margin-bottom: 40px;
 }
 #profile .page-title {
-    padding-top: 100px;
-    text-align: center;
+	padding-top: 100px;
+	text-align: center;
 }
 #profile .page-title a{
-    color: rgb(0, 0, 0);
+	color: rgb(0, 0, 0);
 }
 .profile-contents {
-  margin:0 100px 10px;
-  text-align: left;
+	margin:0 80px 10px;
+	text-align: left;
 }
 .profile-contents li{
-  list-style: none;
-  font-size: 18px;
+	list-style: none;
+	font-size: 18px;
 }
 .profile-contents a{
-  color: rgb(30, 100, 140);
+	color: rgb(30, 100, 140);
 }
 .profile-contents a:hover{
 
-  text-decoration: underline;
+	text-decoration: underline;
 }
 .profile-contents hr{
-  margin: 10px 0;
+	margin: 10px 0;
 }
 .name{
-  display: grid;
+	padding-left: 30px;
 }
 .name h3{
-  font-size: 40px;
+	font-size: 40px;
 }
 .name h4{
-  font-size: 30px;
+	font-size: 30px;
 }
 .name h5{
-  font-size: 20px;
+	font-size: 20px;
 }
 .sub-title{
-  font-size: 20px;
-  font-weight: bold;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/*like
+-----------------------*/
+#like {
+	background: linear-gradient(to right top, rgb(0, 245, 50), rgb(230, 245, 10));
+	height: 250px;
+	margin-bottom: 40px;
+}
+#like .page-title {
+	padding-top: 100px;
+	text-align: center;
+}
+#like .page-title a{
+	color: rgb(0, 0, 0);
+}
+
+
+/*exercise
+-----------------------*/
+#exercise {
+	background: linear-gradient(to right top, rgb(230, 245, 10), rgb(242, 105, 57));
+	height: 250px;
+	margin-bottom: 40px;
+}
+#exercise .page-title {
+	padding-top: 100px;
+	text-align: center;
+}
+#exercise .page-title a{
+	color: rgb(0, 0, 0);
+}
+/*contact
+-----------------------*/
+#contact {
+	background: linear-gradient(to right top, rgb(242, 105, 57), rgb(207, 46, 146));
+	height: 250px;
+	margin-bottom: 40px;
+}
+#contact .page-title {
+	padding-top: 100px;
+	text-align: center;
+}
+#contact .page-title a{
+	color: rgb(0, 0, 0);
 }
 
 /*footer
 -----------------------*/
 footer {
-  text-align: center;
-  margin-top: auto;
-  padding: 5px;
+	text-align: center;
+	margin-top: auto;
+	padding: 5px;
 }
 footer hr{
-  height: 2px;
-  background-color: rgb(145, 145, 145);
+	height: 2px;
+	background-color: rgb(145, 145, 145);
 }
 footer small {
-  color: rgb(145, 145, 145);
-  font-size: 0.85rem;
-  margin-right: 20px;
+	color: rgb(145, 145, 145);
+	font-size: 0.85rem;
+	margin-right: 20px;
 }
 footer a{
-  color: rgb(100, 100, 100);
-  font-size: 0.85rem;
-  margin: 0 15px;
+	color: rgb(100, 100, 100);
+	font-size: 0.85rem;
+	margin: 0 15px;
 }
 footer a:hover{
-  color: rgb(50, 50, 50);
-  text-decoration: underline;
+	color: rgb(50, 50, 50);
+	text-decoration: underline;
 }
 footer .shiga{
-  padding-left: 40px;
-  border-left: 0.8px solid rgb(145, 145, 145);
+	padding-left: 40px;
+	border-left: 0.8px solid rgb(145, 145, 145);
 }
