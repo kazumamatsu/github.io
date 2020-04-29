@@ -229,17 +229,25 @@ img {
 #like .page-title a{
 	color: rgb(0, 0, 0);
 }
-.table{
+.like-table{
 	width: auto;
 	border-collapse: collapse;
 }
-.table tr{
+.like-table tr{
 	border-bottom: solid 2.5px rgb(200, 200, 200);
 }
-.table tr:last-child{
+.like-table tr:last-child{
 	border-bottom: none;
 }
-
+.like-table td{
+	position: relative;
+	text-align: left;
+	width: auto;
+	background-color: rgb(70, 70, 70);
+	color: rgb(215, 215, 215);
+	text-align: center;
+	padding: 10px 0px;
+}
 
 /*exercise
 -----------------------*/
