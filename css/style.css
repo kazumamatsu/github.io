@@ -229,6 +229,16 @@ img {
 #like .page-title a{
 	color: rgb(0, 0, 0);
 }
+.table{
+	width: auto;
+	border-collapse: collapse;
+}
+.table tr{
+	border-bottom: solid 2.5px rgb(200, 200, 200);
+}
+.table tr:last-child{
+	border-bottom: none;
+}
 
 
 /*exercise
