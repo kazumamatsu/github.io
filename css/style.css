@@ -275,32 +275,32 @@ img {
 }
 
 
-/*like
+/*works
 -----------------------*/
-#like {
+#works {
 	background: linear-gradient(to right top, rgb(0, 245, 50), rgb(230, 245, 10));
 	height: 250px;
 	margin-bottom: 40px;
 }
-#like .page-title {
+#works .page-title {
 	padding-top: 100px;
 	text-align: center;
 }
-#like .page-title a{
+#works .page-title a{
 	color: rgb(0, 0, 0);
 }
-.like-table{
+.works-table{
 	width: 70%;
 	border-collapse: collapse;
 	margin:70px auto;
 }
-.like-table tr{
+.works-table tr{
 	border-bottom: solid 2px rgb(215, 215, 215);
 }
-.like-table tr:last-child{
+.works-table tr:last-child{
 	border-bottom: none;
 }
-.like-table th{
+.works-table th{
 	position: relative;
 	text-align: left;
 	width: 30%;
@@ -309,7 +309,7 @@ img {
 	text-align: center;
 	padding: 10px 0;
 }
-.like-table th:after{
+.works-table th:after{
 	display: block;
 	content: "";
 	width: 0px;
@@ -321,7 +321,7 @@ img {
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent;
 }
-.like-table td{
+.works-table td{
 	text-align: left;
 	width: 70%;
 	text-align: center;
@@ -398,8 +398,8 @@ img {
 	color: rgb(0, 0, 0);
 }
 .contact-contents{
-	margin-left: 10%;
 	text-align: center;
+	margin: 30px 0;
 }
 
 /*footer
