@@ -2,7 +2,7 @@
 <html lang="ja" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>松本和真のホームページ_プロフィール</title>
+    <title>松本和真 課題提出</title>
     <link rel="icon" type="image/png" href="images/favicon.ico">
     <meta name="twitter:" content="滋賀大学データサイエンス学部松本和真のホームページ">
 
@@ -10,16 +10,19 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+ <!-- JavaScript-->
+    <script type="text/javascript" src="javascript.js"></script>
   </head>
 
-  <body>
+  <body onload="update()">
     <div id="exercise" class="big-bg" >
         <header class="page-header wrapper">
             <nav class="header-main">
                 <ul class="main-nav">
                     <li class="main-menu main-logo"><a  class="menu-logo" href="index.html"><img src="images/logo_k_165.png"
                         onmouseover="this.src='images/logo_k_214.png'" onmouseout="this.src='images/logo_k_165.png'" alt="ホーム"></a></li>
-                        <li class="main-menu main-moji"><a class="menu-elements" href="profile.html">Profile</a></li>
+                        <li class="main-menu main-moji"><a class="menu-elements" href="gallery.html">Gallery</a></li>
                         <li class="main-menu main-moji"><a class="menu-elements" href="like.html">Like</a></li>
                         <li class="main-menu main-moji"><a class="menu-elements" href="exercise.html">Exercise</a></li>
                         <li class="main-menu main-moji"><a class="menu-elements" href="contact.html">Contact</a></li>
@@ -40,7 +43,35 @@
 
 
    <div class="exercise-contents">
-
+       <div class="">
+           本日は、
+           <span id="year"></span>年
+           <span id="month"></span>月
+           <span id="date"></span>日
+       </div>
+       <div class="exercise0511">
+           <li>5月20日課題</li>
+           <p><img src="images/0520_graph.png" alt="0520_graph"></p>
+       </div>
+       <div class="exercise0511">
+           <li>5月27日課題</li>
+           <table border="2">
+               <tr>
+                   <th>直前(60~30秒前)</th>
+                   <th>最新(30~0秒前)</th>
+               </tr>
+               <tr>
+                   <td><img src="images/cpu_before.png" alt="before"></td>
+                   <td><img src="images/cpu_after.png" alt="after"></td>
+               </tr>
+           </table>
+       </div>
+       <div class="exercise0511">
+           <li>章末問題スクレイピング</li>
+           <li>前日の彦根の気温グラフ</li>
+           <p><img src="images/graph_temp.png" alt="彦根の気温推移"></p>
+           <a href="http://www.jma.go.jp/jp/amedas_h/yesterday-60131.html?areaCode=000&groupCode=43">スクレイピング先_気象庁のアメダス</a>
+       </div>
    </div>
 
    <footer>

@@ -12,7 +12,11 @@ body {
 	background: rgb(245, 245, 247);
 }
 a {
+	color: rgb(0, 100, 200);
 	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
 }
 img {
 
@@ -105,6 +109,7 @@ img {
 }
 .main-nav a:hover {
 	color: rgb(214, 214, 214);
+	text-decoration:none;
 }
 .main-sns{
 	margin-top: 5px;
@@ -144,6 +149,9 @@ img {
 	font-size: 1.25rem;
 	margin-bottom: 30px;
 }
+.home-button2{
+	color: rgb(255, 255, 255);
+}
 .home-buttons{
 	display: flex;
 }
@@ -155,9 +163,6 @@ img {
 	border-radius: 50px;
 	padding: 12.5px 20px;
 }
-.home-button1:hover {
-	text-decoration: underline;
-}
 
 .pad {
 	height: auto;
@@ -166,20 +171,6 @@ img {
 	margin: 0 auto;
 }
 
-/* NEWS
-------------------------------- */
-#profile {
-	background: linear-gradient(to right top, rgb(0, 160, 255), rgb(0, 245, 50));
-	height: 250px;
-	margin-bottom: 40px;
-}
-#profile .page-title {
-	padding-top: 100px;
-	text-align: center;
-}
-#profile .page-title a{
-	color: rgb(0, 0, 0);
-}
 .profile-contents {
 	margin:0 80px 10px;
 	text-align: left;
@@ -188,12 +179,13 @@ img {
 	list-style: none;
 	font-size: 18px;
 }
+.profile-contents .page-title{
+	text-align: center;
+	font-family: none;
+	font-weight: bold;
+}
 .profile-contents a{
 	color: rgb(30, 100, 140);
-}
-.profile-contents a:hover{
-
-	text-decoration: underline;
 }
 .profile-contents hr{
 	margin: 10px 0;
@@ -202,10 +194,10 @@ img {
 	padding-left: 30px;
 }
 .name h3{
-	font-size: 40px;
+	font-size: 35px;
 }
 .name h4{
-	font-size: 30px;
+	font-size: 25px;
 }
 .name h5{
 	font-size: 20px;
@@ -214,6 +206,74 @@ img {
 	font-size: 20px;
 	font-weight: bold;
 }
+.sns{
+	text-align: center;
+}
+.sns iframe{
+	margin: 0px 20px;
+}
+.sns table{
+	width: 80%;
+	border-collapse: collapse;
+	margin:70px auto;
+}
+.sns table tr{
+	border-bottom: solid 2px rgb(215, 215, 215);
+}
+.sns table tr:last-child{
+	border-bottom: none;
+}
+.sns table th{
+	color: rgb(15, 15, 15);
+	font-size: 1.3rem;
+	text-align: left;
+	width: 30%;
+	background-color: rgba(0, 150, 246, 0.5);
+	text-align: center;
+	padding: 10px 0;
+}
+.sns table td{
+	text-align: left;
+	width: 70%;
+	text-align: center;
+	background-color: #eee;
+	padding: 10px 0;
+}
+/* gallery
+------------------------------- */
+#gallery {
+	background: linear-gradient(to right top, rgb(0, 160, 255), rgb(0, 245, 50));
+	height: 250px;
+	margin-bottom: 40px;
+}
+#gallery .page-title {
+	padding-top: 100px;
+	text-align: center;
+}
+#gallery .page-title a{
+	color: rgb(0, 0, 0);
+}
+.introduction{
+	margin: auto 5% 0px;
+	font-size: 1.5rem;
+}
+.item{
+    text-align: center;
+}
+.item img{
+    max-width: 400px;
+}
+.item p{
+    text-align: auto;
+    font-size: 1.2rem;
+}
+.grid{
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin: 6% 40px 50px;
+}
+
 
 /*like
 -----------------------*/
@@ -229,21 +289,18 @@ img {
 #like .page-title a{
 	color: rgb(0, 0, 0);
 }
-table{
+.like-table{
 	width: 70%;
 	border-collapse: collapse;
 	margin:70px auto;
 }
-
-table tr{
+.like-table tr{
 	border-bottom: solid 2px rgb(215, 215, 215);
 }
-
-table tr:last-child{
+.like-table tr:last-child{
 	border-bottom: none;
 }
-
-table th{
+.like-table th{
 	position: relative;
 	text-align: left;
 	width: 30%;
@@ -252,8 +309,7 @@ table th{
 	text-align: center;
 	padding: 10px 0;
 }
-
-table th:after{
+.like-table th:after{
 	display: block;
 	content: "";
 	width: 0px;
@@ -265,8 +321,7 @@ table th:after{
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent;
 }
-
-table td{
+.like-table td{
 	text-align: left;
 	width: 70%;
 	text-align: center;
@@ -287,6 +342,47 @@ table td{
 #exercise .page-title a{
 	color: rgb(0, 0, 0);
 }
+.exercise-contents{
+	text-align: center;
+	font-size: 1.2rem;
+}
+.exercise-contents div{
+	margin: 20px 0;
+}
+.exercise-contents li{
+	list-style: none;
+}
+.exercise-contents img{
+	padding: 0 10px;
+}
+.exercise-contents table{
+	width: 80%;
+	border-collapse: collapse;
+	margin:0px auto;
+}
+.exercise-contents table tr{
+	border-bottom: solid 2px rgb(215, 215, 215);
+}
+.exercise-contents table tr:last-child{
+	border-bottom: none;
+}
+.exercise-contents table th{
+	color: rgb(15, 15, 15);
+	text-align: left;
+	background-color: rgba(230, 245, 10,0.5);
+	text-align: center;
+	padding: 10px 0;
+}
+.exercise-contents table td{
+	text-align: left;
+	text-align: center;
+	background-color: #eee;
+	padding: 10px 0;
+}
+.exercise-contents table td img{
+	width: 70%;
+}
+
 /*contact
 -----------------------*/
 #contact {
@@ -300,6 +396,9 @@ table td{
 }
 #contact .page-title a{
 	color: rgb(0, 0, 0);
+}
+.contact-contents{
+	text-align: center;
 }
 
 /*footer
@@ -325,9 +424,29 @@ footer a{
 }
 footer a:hover{
 	color: rgb(50, 50, 50);
-	text-decoration: underline;
 }
 footer .shiga{
 	padding-left: 40px;
 	border-left: 0.8px solid rgb(145, 145, 145);
+}
+
+@media (max-width: 600px) {
+	#home {
+		height: 50vh;
+		min-height: 50vh;
+	}
+	.home-content .pad{
+		visibility: hidden;
+	}
+    #gallery{
+        height: 50px;
+        min-height: 10px;
+    }
+    .grid{
+        grid-columns: 1;
+        grid-row: auto;
+    }
+    .grid img{
+        width: 90%;
+    }
 }
