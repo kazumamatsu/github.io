@@ -379,8 +379,11 @@ img {
 	background-color: #eee;
 	padding: 10px 0;
 }
-.exercise-contents table td img{
+.exercise-contents .exercise0511 table td img{
 	width: 70%;
+}
+.exercise-contents .exercise0603 table td img{
+	width: 90%;
 }
 
 /*contact
