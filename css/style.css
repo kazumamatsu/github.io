@@ -137,12 +137,28 @@ img {
 	margin-top: auto;
 	padding-top: 15%;
 }
+.today{
+	position: relative;
+	color: rgb(255,255,255);
+	font-size: 100px;
+}
+.today-date{
+    width: 300px;
+
+    text-align: center;
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+}
+.today-date span{
+
+}
 .home-content .page-title {
 	font-size: 3.5rem;
 	font-family: "Philosopher", serif;
 	font-weight: normal;
 	color : rgb(255, 255, 255);
-	margin-top: 40px;
+	margin-top: 100px;
 }
 .home-content p {
 	color: rgb(255, 255, 255);
@@ -188,7 +204,7 @@ img {
 	color: rgb(30, 100, 140);
 }
 .profile-contents hr{
-	margin: 10px 0;
+	margin: 10px 0px;
 }
 .name{
 	padding-left: 30px;
@@ -385,7 +401,9 @@ img {
 .exercise-contents .exercise0603 table td img{
 	width: 90%;
 }
-
+.exercise-contents hr{
+	margin: 10px 0;
+}
 /*contact
 -----------------------*/
 #contact {
