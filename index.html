@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+ <!-- JavaScript-->
+    <script type="text/javascript" src="javascript.js"></script>
   </head>
-  <body>
+  <body onload="update()">
     <div id="home" class="big-bg" >
         <header class="page-header wrapper">
             <nav class="header-main">
@@ -30,6 +33,16 @@
 
        <div class="home-content wrapper">
            <div>
+               <div class="today">
+                   <p class="today-date">
+                       <span id="year"></span>年
+                       <span id="month"></span>月
+                       <span id="date"></span>日
+                       <span id="hour"></span>時
+                       <span id="min"></span>分
+                       <span id="sec"></span>秒
+                   </p>
+               </div>
                <h2 class="page-title">Welcome To My HomePage </h2>
                <p>松本和真のホームページです。<a class="home-button2" href="#profile">プロフィール &rsaquo;</a></p>
                <div class="home-buttons">
