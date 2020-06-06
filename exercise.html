@@ -43,70 +43,81 @@
 
 
    <div class="exercise-contents wrapper">
-       <div class="">
-           本日は、
-           <span id="year"></span>年
-           <span id="month"></span>月
-           <span id="date"></span>日
-       </div>
-       <hr>
-       <div class="exercise0511">
-           <li>5月20日課題</li>
-           <p><img src="images/0520_graph.png" alt="0520_graph"></p>
-       </div>
-       <hr>
-       <div class="exercise0511">
-           <li>5月27日課題</li>
-           <table border="2">
-               <tr>
-                   <th>直前(90~30秒前)</th>
-                   <th>最新(60~0秒前)</th>
-               </tr>
-               <tr>
-                   <td><img src="images/cpu_before.png" alt="before"></td>
-                   <td><img src="images/cpu_after.png" alt="after"></td>
-               </tr>
-           </table>
-       </div>
-       <hr>
-       <div class="exercise0603">
-           <li>6月 3日課題</li>
-           <li>演習問題1</li>
-           <table border="2">
-               <tr>
-                   <th>ハマチの値段</th>
-                   <th>タイの値段</th>
-                   <th>マグロの値段</th>
-               </tr>
-               <tr>
-                   <td><img src="images/graph_hamati.png" alt="ハマチ"></td>
-                   <td><img src="images/graph_tai.png" alt="タイ"></td>
-                   <td><img src="images/graph_maguro.png" alt="マグロ"></td>
-               </tr>
-           </table>
-           <p>３種類をくっつけたグラフ</p>
-           <p><img src="images/graph_fishall.png" alt="３種類のグラフ"></p>
-           <li>演習問題2</li>
-           <table border="2">
-               <tr>
-                   <th>トヨタの株価(30秒毎)</th>
-                   <th>トヨタの株価(10秒毎)</th>
-               </tr>
-               <tr>
-                   <td><img src="images/graph_stockprice.png" alt="TOYOTA"></td>
-                   <td><img src="images/graph_stockprice2.png" alt="TOYOTA"></td>
-               </tr>
-           </table>
-           <a href="https://stocks.finance.yahoo.co.jp/stocks/detail/?code=7203.T">スクレイピング先_Yahoo!ファイナンス</a>
-       </div>
-       <hr>
-       <div class="exercise0511">
-           <li>章末問題スクレイピング</li>
-           <li>前日の彦根の気温グラフ</li>
-           <p><img src="images/graph_temp.png" alt="彦根の気温推移"></p>
-           <a href="http://www.jma.go.jp/jp/amedas_h/yesterday-60131.html?areaCode=000&groupCode=43">スクレイピング先_気象庁のアメダス</a>
-       </div>
-   </div>
+       <article>
+           <div class="">
+               本日は、
+               <span id="year"></span>年
+               <span id="month"></span>月
+               <span id="date"></span>日
+           </div>
+           <hr>
+           <div id="e0520" class="exercise0520">
+               <li>5月20日課題</li>
+               <p><img src="images/0520_graph.png" alt="0520_graph"></p>
+           </div>
+           <hr>
+           <div id="e0527" class="exercise0527">
+               <li>5月27日課題</li>
+               <table border="2">
+                   <tr>
+                       <th>直前(90~30秒前)</th>
+                       <th>最新(60~0秒前)</th>
+                   </tr>
+                   <tr>
+                       <td><img src="images/cpu_before.png" alt="before"></td>
+                       <td><img src="images/cpu_after.png" alt="after"></td>
+                   </tr>
+               </table>
+           </div>
+           <hr>
+           <div id="e0603" class="exercise0603">
+               <li>6月 3日課題</li>
+               <li>演習問題1</li>
+               <table border="2">
+                   <tr>
+                       <th>ハマチの値段</th>
+                       <th>タイの値段</th>
+                       <th>マグロの値段</th>
+                   </tr>
+                   <tr>
+                       <td><img src="images/graph_hamati.png" alt="ハマチ"></td>
+                       <td><img src="images/graph_tai.png" alt="タイ"></td>
+                       <td><img src="images/graph_maguro.png" alt="マグロ"></td>
+                   </tr>
+               </table>
+               <p>３種類をくっつけたグラフ</p>
+               <p><img src="images/graph_fishall.png" alt="３種類のグラフ"></p>
+               <li>演習問題2</li>
+               <table border="2">
+                   <tr>
+                       <th>トヨタの株価(30秒毎)</th>
+                       <th>トヨタの株価(10秒毎)</th>
+                   </tr>
+                   <tr>
+                       <td><img src="images/graph_stockprice.png" alt="TOYOTA"></td>
+                       <td><img src="images/graph_stockprice2.png" alt="TOYOTA"></td>
+                   </tr>
+               </table>
+               <a href="https://stocks.finance.yahoo.co.jp/stocks/detail/?code=7203.T">スクレイピング先_Yahoo!ファイナンス</a>
+           </div>
+           <hr>
+           <div class="exercise0511">
+               <li>章末問題スクレイピング</li>
+               <li>前日の彦根の気温グラフ</li>
+               <p><img src="images/graph_temp.png" alt="彦根の気温推移"></p>
+               <a href="http://www.jma.go.jp/jp/amedas_h/yesterday-60131.html?areaCode=000&groupCode=43">スクレイピング先_気象庁のアメダス</a>
+           </div>
+       </article>
+
+       <aside>
+           <p>課題一覧</p>
+           <ul class="exercise-menu">
+               <li><a href="#e0520">5月20日課題</a></li>
+               <li><a href="#e0527">5月27日課題</a></li>
+               <li><a href="#e0603">6月 3日課題</a></li>
+           </ul>
+       </aside>
+   </div><!-- exercise-contents -->
 
    <footer>
        <div class="wrapper">

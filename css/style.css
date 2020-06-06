@@ -358,8 +358,37 @@ img {
 	color: rgb(0, 0, 0);
 }
 .exercise-contents{
+	display: flex;
+	justify-content: space-between;
 	text-align: center;
 	font-size: 1.2rem;
+}
+article{
+	width: 75%;
+	order: 2;
+}
+aside{
+	text-align: left;
+	width: 20%;
+	order: 1;
+}
+aside p{
+	font-size: 25px;
+}
+.exercise-menu{
+	margin-bottom: 60px;
+	list-style: none;
+}
+.exercise-menu li{
+	border-bottom: 1px rgb(150, 150, 150) solid;
+}
+.exercise-menu a{
+	color: rgb(50, 50, 50);
+	padding: 10px;
+	display: block;
+}
+.exercise-menu a:hover{
+	color: rgb(150, 150, 150);
 }
 .exercise-contents div{
 	margin: 20px 0;
@@ -394,7 +423,7 @@ img {
 	background-color: #eee;
 	padding: 10px 0;
 }
-.exercise-contents .exercise0511 table td img{
+.exercise-contents .exercise0527 table td img{
 	width: 70%;
 }
 .exercise-contents .exercise0603 table td img{
