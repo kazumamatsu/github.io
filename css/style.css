@@ -374,6 +374,7 @@ aside{
 }
 aside p{
 	font-size: 25px;
+	border-bottom: 2px rgba(242, 105, 60,1) solid;
 }
 .exercise-menu{
 	margin-bottom: 60px;
