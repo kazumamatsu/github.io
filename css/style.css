@@ -433,6 +433,36 @@ aside p{
 .exercise-contents hr{
 	margin: 10px 0;
 }
+/*exercise0610
+-----------------------*/
+#exercise0610 {
+	background: rgba(230, 245, 10);
+	height: 200px;
+	margin-bottom: 20px;
+}
+#exercise0610 .page-title {
+	padding-top: 100px;
+	text-align: center;
+}
+#exercise0610 .page-title a{
+	color: rgb(0, 0, 0);
+}
+.exercise0610 div{
+	text-align: center;
+	margin: 20px;
+	font-size: 1.2rem;
+}
+.exercise0610 li{
+	list-style: none;
+}
+.exercise0610 .kadai{
+	text-align: left;
+}
+.factor {
+	font-size: 2rem;
+	color: rgb(255, 0, 0);
+}
+
 /*contact
 -----------------------*/
 #contact {
@@ -482,23 +512,5 @@ footer .shiga{
 }
 
 @media (max-width: 600px) {
-	#home {
-		height: 50vh;
-		min-height: 50vh;
-		max-height: 50vh
-	}
-	.home-content .pad{
-		visibility: hidden;
-	}
-    #gallery{
-        height: 50px;
-        min-height: 10px;
-    }
-    .grid{
-        grid-columns: 1;
-        grid-row: auto;
-    }
-    .grid img{
-        width: 90%;
-    }
+
 }

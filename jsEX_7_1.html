@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Java scriptのテスト</title>
+        <script type="text/javascript">
+            function isMultiple(a,n) {
+                var b = a%n;
+                if (b==0) {
+                    var T = "True";
+                    return T;
+                }else {
+                    var F = "False";
+                    return F;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>スクリプト実行前</p>
+        <script type="text/javascript">
+            var num = Number(prompt("数字を入力"));
+            var d=isMultiple(num,2);
+            document.write(num+"は２でわれるか？："+d);
+        </script>
+        <script type="text/javascript">
+            var text = prompt("数字を入力");
+            var num = Number(text);
+            for (var i = 0 ; i < num ; i++){
+                document.write("<p>松本和真"+(1+i)+"</p>");
+            }
+        </script>
+        <script type="text/javascript">
+            var name = prompt("あなたの名前を教えてください");
+            var key = "abc";
+            if (name==key) {
+                document.write("https://www.apple.com/jp/");
+            }
+            else {
+                document.write("https://www.shiga-u.ac.jp/");
+            }
+
+        </script>
+        <script type="text/javascript">
+        for (var i = 1 ; i < 10 ; i++){
+            var k = i % 2;
+            if (i%3==0) {
+                document.write("<p>"+i+"は3の倍数</p>");
+            }
+            else if (k==0) {
+                document.write("<p>"+i+"は偶数</p>");
+            }
+            else {
+                document.write("<p>"+i+"は奇数</p>");
+            }
+        }
+        </script>
+        <script type="text/javascript">
+        var a="<p>テスト1, ";
+        var b=100;
+        var c=", テスト2</p>";
+        document.write(a+b+c);
+        </script>
+        <script type="text/javascript">
+        for (var i = 0 ; i < 10 ; i++){
+            document.write("<p>↓ギャラリーはこちらあと"+(10-i)+"行↓</p>");
+            console.log(i);
+        }
+        </script>
+        <a href="#">abcdefghijklmn</a>
+        <script type="text/javascript">
+        for (var i = 0 ; i < 10 ; i++){
+            document.write("<p>↑ギャラリーはこちらあと"+(1+i)+"行↑</p>");
+            console.log(i);
+        }
+        </script>
+        <p>スクリプト実行後</p>
+    </body>
+</html>
