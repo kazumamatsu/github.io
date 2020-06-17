@@ -73,6 +73,7 @@
            <div id="e0603" class="exercise0603">
                <li>6月 3日課題</li>
                <li>演習問題1</li>
+           <!--
                <table border="2">
                    <tr>
                        <th>ハマチの値段</th>
@@ -85,7 +86,8 @@
                        <td><img src="images/graph_maguro.png" alt="マグロ"></td>
                    </tr>
                </table>
-               <p>３種類をくっつけたグラフ</p>
+            -->
+               <p>３種類の坂根の値段をくっつけたグラフ</p>
                <p><img src="images/graph_fishall.png" alt="３種類のグラフ"></p>
                <li>演習問題2</li>
                <table border="2">
@@ -106,6 +108,68 @@
                <p><a href="exercise0610.html">素因数分解</a></p>
            </div>
            <hr>
+           <div id="e0617" class="exercise0617">
+               <li>6月17日課題</li>
+               <form class="auto_table" name="tra" action="index.html" method="post">
+                   <table border="2">
+                       <tr>
+                           <th>商品名</th>
+                           <th>税別価格</th>
+                           <th>個数</th>
+                           <th>税込価格</th>
+                       </tr>
+                       <tr>
+                           <td>商品１</td>
+                           <td><input type="text" name="value01">円</td>
+                           <td>
+                               <select name="num01">
+                                   <script type="text/javascript">
+                                       for (var i=1 ; i<11 ; i++){
+                                           document.write("<option value="+i+">"+i+"</option>");
+                                       }
+                                   </script>
+                               </select>
+                           </td>
+                           <td><input type="text" name="value01N">円</td>
+                       </tr>
+                       <tr>
+                           <td>商品２</td>
+                           <td><input type="text" name="value02">円</td>
+                           <td>
+                               <select name="num02">
+                                   <script type="text/javascript">
+                                       for (var i=1 ; i<11 ; i++){
+                                           document.write("<option value="+i+">"+i+"</option>");
+                                       }
+                                   </script>
+                               </select>
+                           </td>
+                           <td><input type="text" name="value02N">円</td>
+                       </tr>
+                       <tr>
+                           <td>合計</td>
+                           <td><input type="text" name="valueS">円</td>
+                           <td>
+                               <select name="numS">
+                                   <script type="text/javascript">
+                                       for (var i=1 ; i<21 ; i++){
+                                           document.write("<option value="+i+">"+i+"</option>");
+                                       }
+                                   </script>
+                               </select>
+                           </td>
+                           <td><input type="text" name="valueNS">円</td>
+                       </tr>
+                   </table>
+                   <div>税率：
+                       <input type="radio" name="par" value=1.05 checked>5%
+                       <input type="radio" name="par" value=1.08>8%
+                       <input type="radio" name="par" value=1.1>10%
+                       <input type="button" value="自動計算" name="auto" onclick="trans()">
+                   </div>
+               </form>
+           </div>
+           <hr>
            <div class="exercise0511">
                <li>章末問題スクレイピング</li>
                <li>前日の彦根の気温グラフ</li>
@@ -121,6 +185,7 @@
                <li><a href="#e0527">5月27日課題</a></li>
                <li><a href="#e0603">6月 3日課題</a></li>
                <li><a href="#e0610">6月10日課題</a></li>
+               <li><a href="#e0617">6月17日課題</a></li>
                <!-- 課題が追加されたら書き足す -->
            </ul>
        </aside>

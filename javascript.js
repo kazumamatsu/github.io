@@ -37,6 +37,33 @@ function minFactor(a) {
     }
     return fac;
 }
+//0617課題_自動計算表
+function trans() {
+    a = Number(tra.value01.value);
+    b = Number(tra.value02.value);
+    if (isNaN(a)||isNaN(b)) {
+        alert("半角数字を入力してください!!");
+        return;
+    }
+    c = Number(tra.num01.value);
+    d = Number(tra.num02.value);
+    for (var i = 0; i <= 2; i++) {
+        if(tra.par[i].checked){
+            e = Number(tra.par[i].value);
+        }
+    }
+    f = Math.floor(a*c*e);//商品１の税別価格×個数
+    g = Math.floor(b*d*e);//商品２の税別価格×個数
+    console.log(typeof(c));
+    console.log(typeof(c+d));
+    console.log(typeof(e));
+    tra.valueS.value = a*c+b*d;
+    tra.numS.value = c+d;
+    tra.value01N.value = f;
+    tra.value02N.value = g;
+    tra.valueNS.value = f+g;
+}
+
 
 //ニュース完成していません
 /*

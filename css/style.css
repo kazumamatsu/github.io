@@ -433,6 +433,15 @@ aside p{
 .exercise-contents hr{
 	margin: 10px 0;
 }
+input{
+	background: #fff;
+	border: 1px solid #000;
+}
+select{
+	background: #fff;
+	border: 1px solid #000;
+}
+
 /*exercise0610
 -----------------------*/
 #exercise0610 {
