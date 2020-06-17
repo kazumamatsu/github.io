@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>JSテスト</title>
+        <script>
+            function event01() {
+                location.href = "http://www.shiga-u.ac.jp";
+            }
+            function f01() {
+                a = Number(fm.t1.value);
+                b = Number(fm.t2.value);
+                if (fm.c1.checked) {
+                    fm.t3.value = a*b/1000*11 + "円";
+                } else {
+                    fm.t3.value = a*b/1000*24 + "円";
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            function trans() {
+                a = Number(tra.value01.value);
+                b = Number(tra.value02.value);
+                c = Number(tra.num01.value);
+                d = Number(tra.num02.value);
+                for (var i = 0; i <= 2; i++) {
+                    if(tra.par[i].checked){
+                        e = Number(tra.par[i].value);
+                    }
+                }
+                f = Math.floor(a*c*e);//商品１の税別価格×個数
+                g = Math.floor(b*d*e);//商品２の税別価格×個数
+                console.log(typeof(c));
+                console.log(typeof(c+d));
+                console.log(typeof(e));
+                tra.valueS.value = a*c+b*d;
+                tra.numS.value = c+d;
+                tra.value01N.value = f;
+                tra.value02N.value = g;
+                tra.valueNS.value = f+g;
+            }
+        </script>
+
+    </head>
+    <body onCopy="alert('コピー禁止!!');return false;">
+        <p>right click!</p>
+        <p>ひみ<span onContextmenu="event01()">つ</span>のページ</p>
+        <form name="fm" action="index.html" method="post">
+            <p>消費電力：<input type="text" name="t1"></p>
+            <p>使用時間：<input type="text" name="t2"></p>
+            <p>時間帯：<input type="checkbox" name="c1">深夜電力</p>
+            <p><input type="button" value="電気代" name="b1" onclick="f01()"></p>
+            <p><input type="text" name="t3"></p>
+            <hr>
+            <p>
+                <input type="radio" name="r1" checked>気温
+                <input type="radio" name="r1">湿度
+            </p>
+        </form>
+
+        <form class="" name="tra" action="index.html" method="post">
+            <table border="2">
+                <tr>
+                    <th>商品名</th>
+                    <th>税別価格</th>
+                    <th>個数</th>
+                    <th>税込価格</th>
+                </tr>
+                <tr>
+                    <td>商品１</td>
+                    <td><input type="text" name="value01">円</td>
+                    <td>
+                        <select name="num01">
+                            <script type="text/javascript">
+                                for (var i=1 ; i<11 ; i++){
+                                    document.write("<option value="+i+">"+i+"</option>");
+                                }
+                            </script>
+                        </select>
+                    </td>
+                    <td><input type="text" name="value01N">円</td>
+                </tr>
+                <tr>
+                    <td>商品２</td>
+                    <td><input type="text" name="value02">円</td>
+                    <td>
+                        <select name="num02">
+                            <script type="text/javascript">
+                                for (var i=1 ; i<11 ; i++){
+                                    document.write("<option value="+i+">"+i+"</option>");
+                                }
+                            </script>
+                        </select>
+                    </td>
+                    <td><input type="text" name="value02N">円</td>
+                </tr>
+                <tr>
+                    <td>合計</td>
+                    <td><input type="text" name="valueS">円</td>
+                    <td>
+                        <select name="numS">
+                            <script type="text/javascript">
+                                for (var i=1 ; i<21 ; i++){
+                                    document.write("<option value="+i+">"+i+"</option>");
+                                }
+                            </script>
+                        </select>
+                    </td>
+                    <td><input type="text" name="valueNS">円</td>
+                </tr>
+            </table>
+            <div>税率：
+                <input type="radio" name="par" value=1.05 checked>5%
+                <input type="radio" name="par" value=1.08>8%
+                <input type="radio" name="par" value=1.1>10%
+                <input type="button" value="自動計算" name="auto" onclick="trans()">
+            </div>
+        </form>
+
+    </body>
+</html>

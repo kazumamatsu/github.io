@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+            function isMultiple(a,n){
+                var b = a%n;
+                if (b==0) {
+                    var m = "True";
+                } else {
+                    var m = "False";
+                }
+                return m;
+            }
+            function minFactor(a){
+                n = 2; //初期値
+                while (b!=0) {
+                    var b = a%n;
+                    if (b==0) {
+                        return n;
+                    } else {
+                        n+=1;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+        var num = Number(prompt("半角数字を入力してください"));
+        var num2 = 2;
+        var c = isMultiple(num,num2);
+        document.write('<p class="factor">課題5->'+num+'は'+num2+'で割れるか：'+c+"</p>");
+        var d = minFactor(num);
+        document.write('<p class="factor">課題6->'+num+'の最小の因数：'+d+"</p>");
+        document.write(num+'=');
+        while (num!=1) {
+            var e = minFactor(num);
+            num /= e;
+            console.log(e); //ログです
+            if (num==1) {
+                document.write(e);
+            } else {
+                document.write(e+"*");
+            }
+
+        }
+        </script>
+    </body>
+</html>
