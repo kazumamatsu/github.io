@@ -4,7 +4,7 @@ function update(){
     document.getElementById("year").textContent = now.getFullYear();
     document.getElementById("month").textContent = (now.getMonth()+1);
     document.getElementById("date").textContent = now.getDate();
-    document.getElementById("hour").textContent = (now.getHours());
+    document.getElementById("hour").textContent = now.getHours();
     document.getElementById("min").textContent = now.getMinutes();
     document.getElementById("sec").textContent = now.getSeconds();
 }
@@ -63,9 +63,83 @@ function trans() {
     tra.value02N.value = g;
     tra.valueNS.value = f+g;
 }
-
+//0624課題_気象情報平均
+function weather() {
+    result = getCSV("https://www.gakujutsu.co.jp/text/isbn978-4-7806-0708-6/file/oneyear.csv");
+    f0624.txt.value="";//テキストリセット
+    //[0]年月日[1~4]彦根[5~8]那覇[9~13]網走
+    var total=[[0,0,0],[0,0,0],[0,0,0],[0,0,0]];//[日照時間,降水量,気温,積雪量]=k、[彦根,那覇,沖縄]=j
+    var s = Number(f0624.timestart.value);
+    var e = Number(f0624.timeend.value);
+    if (s<1 || 12<s || e<1 || 12<e) {
+        alert("1~12の半角数字を入力してください!!");
+        return;
+    }
+    var count = 0; //期間が何日かカウンター
+    for (var i = 2; i < result.length-1; i++) {
+        var month = Number(result[i][0].split("/")[1]);
+        if (s<=month && month<=e) {
+            count+=1;
+            for (var j = 0; j <= 2; j++) {
+                for (var k = 0; k <=3; k++) {
+                    total[k][j]+=Number(result[i][j*4+k+1]);
+                }
+            }
+        }
+    }
+    console.log(total[2]);
+    console.log(count);
+    var pla = [f0624.pla1, f0624.pla2, f0624.pla3];
+    var menu = [f0624.menu1, f0624.menu2, f0624.menu3, f0624.menu4];
+    var unit = ["時間","mm","℃","cm"];
+    for (var j = 0; j <= 2; j++) {
+        var str ="";
+        if (pla[j].checked) {
+            str+=pla[j].value+"の";
+            for (var k = 0; k <=3; k++) {
+                if (menu[k].checked) {
+                    var mean=(total[k][j]/count).toFixed(2);
+                    str+=menu[k].value+"は"+mean+unit[k];
+                }
+            }
+        }
+        if (str!="") {
+            f0624.txt.value+=str+"\n";
+        }
+    }
+}
+function getCSV(file){
+    var req = new XMLHttpRequest( );
+    req.open("get", file, false);
+    req.send();
+    var tmp = req.responseText.split("\n");
+    var result = new Array();
+    for(var i=0;i<tmp.length;i++){
+        result[i] = tmp[i].split(",");
+    }
+    return result;
+}
+function downloadText( name, content ) {
+    var blob = new Blob([ content ], { "type" : "text/plain" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.target = '_blank';
+    a.download = name;
+    a.click();
+}
 
 //ニュース完成していません
+function news() {
+    result = getCSV("data/newsdata.csv");
+    console.log(result);
+    var str = "";
+    for (var i = 0; i < result.length; i++) {
+        var title=result[i][0];
+        var link =result[i][1];
+        str += '<a href="'+link+'">'+title+'</a></br>';
+    }
+    return str;
+}
 /*
 const outputElement = document.getElementById('output_csv');
 function getCsvData(dataPath) {

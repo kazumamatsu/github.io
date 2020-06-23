@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>JSテスト</title>
+        <script>
+            function news() {
+                result = getCSV("data/newsdata.csv");
+                console.log(result);
+                var str = "";
+                for (var i = 0; i < result.length; i++) {
+                    var title=result[i][0];
+                    var link =result[i][1];
+                    str += '<p><a href="'+link+'">'+title+'</a></p>';
+                }
+                return str;
+            }
+            function getCSV(file){
+                var req = new XMLHttpRequest( );
+                req.open("get", file, false);
+                req.send();
+                var tmp = req.responseText.split("\n");
+                var result = new Array();
+                for(var i=0;i<tmp.length;i++){
+                    result[i] = tmp[i].split(",");
+                }
+                return result;
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+        a = news();
+        document.write(a);
+        </script>
+    </body>
+</html>

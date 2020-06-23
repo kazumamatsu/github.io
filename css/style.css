@@ -178,6 +178,10 @@ img {
 	border-radius: 50px;
 	padding: 12.5px 20px;
 }
+.news{
+	position: relative;
+	width: 500px;
+}
 
 .pad {
 	height: auto;
@@ -185,6 +189,31 @@ img {
 	min-width: 500px;
 	margin: 0 auto;
 }
+.news-titles{
+	position: absolute;
+	text-align: center;
+	left: 110px;
+	top: 100px;
+	padding: 10px 0;
+}
+.news-titles p{
+	font-size: 1.5rem;
+	color: #000;
+}
+.yahoo{
+	color: rgb(255, 0, 0);
+}
+.news-item{
+	text-align: left;
+}
+.news-titles a{
+	font-size: 1.2rem;
+	color: rgb(100, 100, 100);
+}
+.news-titles a:hover{
+	color: rgb(0, 160, 255);
+}
+
 
 .profile-contents {
 	margin:0 80px 10px;
@@ -276,7 +305,7 @@ img {
     text-align: center;
 }
 .item img{
-    max-width: 400px;
+    max-width: 440px;
 }
 .item p{
     text-align: auto;
@@ -285,7 +314,7 @@ img {
 .grid{
     display: grid;
     grid-gap: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
     margin: 6% 40px 50px;
 }
 
@@ -381,6 +410,7 @@ aside p{
 	list-style: none;
 }
 .exercise-menu li{
+	list-style: none;
 	border-bottom: 1px rgb(150, 150, 150) solid;
 }
 .exercise-menu a{
@@ -394,8 +424,13 @@ aside p{
 .exercise-contents div{
 	margin: 20px 0;
 }
-.exercise-contents li{
+.exercise-contents hr{
+	margin: 10px 0;
+}
+.exercise-contents article li{
 	list-style: none;
+	font-size: 1.5rem;
+	margin: 10px;
 }
 .exercise-contents img{
 	padding: 0 10px;
@@ -403,7 +438,6 @@ aside p{
 .exercise-contents table{
 	width: 80%;
 	border-collapse: collapse;
-	margin:0px auto;
 }
 .exercise-contents table tr{
 	border-bottom: solid 2px rgb(215, 215, 215);
@@ -419,7 +453,6 @@ aside p{
 	padding: 10px 0;
 }
 .exercise-contents table td{
-	text-align: left;
 	text-align: center;
 	background-color: #eee;
 	padding: 10px 0;
@@ -427,20 +460,33 @@ aside p{
 .exercise-contents .exercise0527 table td img{
 	width: 70%;
 }
+.exercise-contents .exercise0603 table,.exercise-contents .exercise0527 table{
+	margin:0px auto;
+}
 .exercise-contents .exercise0603 table td img{
 	width: 90%;
 }
-.exercise-contents hr{
-	margin: 10px 0;
+.exercise-contents .exercise0617 form{
+	text-align: left;
+	margin-left: 10%;
 }
-input{
+.exercise-contents .exercise0624 form{
+	text-align: left;
+	margin-left: 10%;
+}
+input,select,textarea{
 	background: #fff;
 	border: 1px solid #000;
 }
-select{
-	background: #fff;
-	border: 1px solid #000;
+input[type="button"]{
+	padding: 5px 10px;
+	border-radius: 10px;
+	background: rgba(230, 245, 10,0.7);
 }
+input[type="button"]:hover{
+	background: rgba(242, 105, 57,0.5);
+}
+
 
 /*exercise0610
 -----------------------*/
