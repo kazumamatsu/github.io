@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>JSテスト</title>
+        <script>
+            function f01() {
+                var num = Number(fm.t1.value) - 1;
+                console.log(num);
+                result = getCSV("https://www.gakujutsu.co.jp/text/isbn978-4-7806-0708-6/file/testbook.csv");
+                var str = "";
+                str += "このCSVには、" + (result.length - 1 ) + "行のデータが入っています。\n";
+                console.log(result.length);
+                str += (num+1)+"行目のデータ: \n";
+                str += "氏名: " + result[num][0];
+                str += ", 年齢: " + result[num][1];
+                str += ", 電話番号: " + result[num][2] + "\n";
+                fm.txt1.value=str;
+                //練習２
+                var years = new Array();
+                var mean = 0;
+                for (var i = 0; i < (result.length-1); i++) {
+                    var year = Number(result[i][1]);
+                    years.push(year);
+                    mean += year;
+                }
+                mean /= (result.length-1);
+                var min = Math.min(...years);
+                var max = Math.max(...years);
+                fm.txt2.value = "最小値："+min+"、最大："+max+"、平均："+mean;
+                console.log(years);
+                console.log(mean);
+                console.log(min);
+                console.log(max);
+                //練習3
+                var a = Number(fm.t2.value);
+                var b = Number(fm.t3.value);
+                fm.txt3.value="このCSVには、" + (result.length - 1 ) + "行のデータが入っています。\n";
+                for (var i = 0; i < (result.length-1); i++) {
+                    var year=Number(result[i][1]);
+                    if (a <= year && year <= b) {
+                        str = "";
+                        str += "氏名: " + result[i][0];
+                        str += ", 年齢: " + result[i][1];
+                        str += ", 電話番号: " + result[i][2] + "\n";
+                        fm.txt3.value+=str;
+
+                    }
+                    console.log(str);
+                }
+            }
+            //練習5
+            function f02(){
+                var a = Number(fm.t4.value);
+                var b = Number(fm.t5.value);
+                if (a<1 || 10<a) {
+                    alert('rowに1~10の半角数字を入力してください');return false;
+                }
+                if (b<1 || 10<b) {
+                    alert('colに1~10の半角数字を入力してください');return false;
+                }
+                console.log(a);
+                console.log(b);
+                var str = "";
+                for (var i = 1; i <= a; i++) {
+                    for (var j = 1; j <= b; j++) {
+                        var num = i**j;
+                        if (j==1) {
+                            str+=num;
+                        }else {
+                            str+=","+num;
+                        }
+                    }
+                    str+="\n";
+                    console.log(str);
+                }
+                fm.txt4.value=str;
+            }
+            function getCSV(file){
+                var req = new XMLHttpRequest( );
+                req.open("get", file, false);
+                req.send();
+                var tmp = req.responseText.split("\n");
+                var result = new Array();
+                for(var i=0;i<tmp.length;i++){
+                    result[i] = tmp[i].split(",");
+                }
+                return result;
+            }
+            function downloadText( name, content ) {
+                var blob = new Blob([ content ], { "type" : "text/plain" });
+                var a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.target = '_blank';
+                a.download = name;
+                a.click();
+            }
+        </script>
+    </head>
+    <body>
+        <form class="" name="fm" action="index.html" method="post">
+            <input type="text" name="t1" value="5000">
+            <input type="button" name="" value="load!!" onclick="f01()">
+            <br>
+            <textarea name="txt1" rows="10" cols="80">This is textarea.</textarea>
+            <br>
+            <textarea name="txt2" rows="5" cols="80">This is textarea.</textarea>
+            <br>
+            <input type="text" name="t2" value="25">
+            才〜
+            <input type="text" name="t3" value="30">
+            才
+            <input type="button" name="" value="load!!" onclick="f01()">
+            <br>
+            <textarea name="txt3" rows="10" cols="80">This is textarea.</textarea>
+            <br>
+            <input type="button" value="ダウンロード" onClick="downloadText('Output.txt',fm.txt3.value);">
+            <br>
+            row:
+            <input type="text" name="t4" value="10">
+            col:
+            <input type="text" name="t5" value="10">
+            <input type="button" name="" value="go!!" onclick="f02()">
+            <br>
+            <textarea name="txt4" rows="10" cols="100">This is textarea.</textarea>
+            <br>
+            <input type="button" value="ダウンロード" onClick="downloadText('pow.csv',fm.txt4.value);">
+            <br>
+
+        </form>
+
+    </body>
+</html>
