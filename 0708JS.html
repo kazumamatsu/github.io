@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>three.js app test</title>
+        <script src="three.js"></script>
+    </head>
+    <body>
+        <script>
+        //--初期化処理-----
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera( 70, 1000/500, 0.1, 10000 );
+        var renderer = new THREE.WebGLRenderer();
+        var light = new THREE.DirectionalLight(0xff00ff);
+        scene.add(light);
+        var light2 = new THREE.PointLight(0xffffff,2,3000,1.0);
+        light2.position.set(0, -2000, 0);
+        scene.add(light2);
+        /*var light3 = new THREE.AmbientLight(0xFFFFFF, 1.0);
+        scene.add(light3);*/
+        renderer.setSize(1000, 500 );
+        document.body.appendChild( renderer.domElement );
+        light.position.set(1, 1, 1);
+        camera.position.set(0,0,1000);
+        //--物体生成-------
+        var geometry = new THREE.BoxGeometry(100, 100, 100);
+        var material = new THREE.MeshStandardMaterial( {color: 0xffffff} );
+        var cube = new THREE.Mesh( geometry, material );
+        scene.add( cube );
+        var geometry2 = new THREE.BoxGeometry(20000, 0.1, 20000);
+        var material2 = new THREE.MeshStandardMaterial({ color: 0x808080 });
+        ground = new THREE.Mesh( geometry2, material2 );
+        ground.position.set(0,-500,0);
+        scene.add( ground );
+        var sphere_geometry = new THREE.SphereGeometry(250, 50, 50);
+        var material_white = new THREE.MeshStandardMaterial( {color: 0xffffff} );
+        var white_sphere = new THREE.Mesh(sphere_geometry, material_white );
+        white_sphere.position.set(400,0,0);
+        scene.add( white_sphere );
+        //--レンダリングループ---------
+        function draw() {
+            //レンダリングループ
+            requestAnimationFrame( draw );
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+
+            renderer.render( scene, camera );
+        };
+        draw();
+        </script>
+    </body>
+</html>
