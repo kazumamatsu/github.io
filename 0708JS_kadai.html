@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>three.js app test</title>
+        <script src="three.js"></script>
+    </head>
+    <body>
+        <script>
+        //--初期化処理-----
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera( 70, 1000/500, 0.1, 10000 );
+        var renderer = new THREE.WebGLRenderer();
+        var light = new THREE.DirectionalLight(0xff00ff);
+        scene.add(light);
+        var light2 = new THREE.PointLight(0xffffff,2,3000,1.0);
+        light2.position.set(0, -2000, 0);
+        scene.add(light2);
+        /*var light3 = new THREE.AmbientLight(0xFFFFFF, 1.0);
+        scene.add(light3);*/
+        renderer.setSize(1000, 500 );
+        document.body.appendChild( renderer.domElement );
+        light.position.set(1, 1, 1);
+        camera.position.set(0,0,2000);
+        //--物体生成-------
+        var geometry = new THREE.SphereGeometry(100, 100, 100);
+        var material_1 = new THREE.MeshStandardMaterial( {color: 0xff0000} );
+        var material_2 = new THREE.MeshStandardMaterial( {color: 0x00ff00} );
+        var material_3 = new THREE.MeshStandardMaterial( {color: 0x0000ff} );
+        var ball_1 = new THREE.Mesh( geometry, material_1 );
+        ball_1.position.set(500,0,0);
+        scene.add( ball_1 );
+        var ball_2 = new THREE.Mesh( geometry, material_2 );
+        ball_2.position.set(0,500,0);
+        scene.add( ball_2 );
+        var ball_3 = new THREE.Mesh( geometry, material_3 );
+        ball_3.position.set(0,0,500);
+        scene.add( ball_3 );
+        var geometry_comet = new THREE.SphereGeometry(50, 100, 100);
+        var material_comet = new THREE.MeshStandardMaterial( {color: 0xff5f5f} );
+        var comet = new THREE.Mesh( geometry_comet, material_comet );
+        scene.add( comet );
+        var geometry_center = new THREE.SphereGeometry(300, 8, 100);
+        var material_center = new THREE.MeshStandardMaterial( {color: 0x00ffff} );
+        var center = new THREE.Mesh( geometry_center, material_center );
+        center.position.set(0,0,0);
+        scene.add( center );
+        //--レンダリングループ---------
+        var t = 0;
+        function draw() {
+            //レンダリングループ
+            requestAnimationFrame( draw );
+            t++;
+            ball_1.position.set(500*Math.sin(t/30),500*Math.cos(t/30),0);
+            ball_2.position.set(0,500*Math.sin(t/20),500*Math.cos(t/20));
+            ball_3.position.set(500*Math.cos(t/10),0,500*Math.sin(t/10));
+            comet.position.set(500*3*Math.cos(t/20),500*Math.cos(t/20),500*Math.sin(t/20));
+            center.position.set(30*Math.cos(t/30),30*Math.cos(t/20),30*Math.sin(t/10));
+            center.rotation.y += 0.1;
+            renderer.render( scene, camera );
+        };
+        draw();
+        </script>
+    </body>
+</html>
