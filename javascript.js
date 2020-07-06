@@ -127,6 +127,58 @@ function downloadText( name, content ) {
     a.download = name;
     a.click();
 }
+//0701課題_気温
+function temp() {
+    var cvs=document.getElementById("temp-cnv");
+    var ctx=cvs.getContext("2d");
+    ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
+    result = getCSV("https://www.gakujutsu.co.jp/text/isbn978-4-7806-0708-6/file/oneyear.csv");
+    //[0]年月日[3]彦根[7]那覇[11]網走：気温データ
+    var pla = [f0701.pla1, f0701.pla2, f0701.pla3];
+    var col = [[255,0,0],[0,255,0],[0,0,255]]
+    var y0 = 50;
+    var x0 = 50;
+    var yzoom = 5;
+    var xzoom = 2;
+    var num = result.length-1;
+    ctx.strokeStyle = "rgb(0,0,0)";
+    ctx.font="10px sans-serif";
+    ctx.strokeText( "0", x0-15, yzoom*y0);
+    ctx.strokeText( "30", x0-15, yzoom*(y0-30));
+    line( ctx, x0, yzoom*(y0+12.5), x0, yzoom*(y0-42.5), 0, 0, 0 );//y軸
+    line( ctx, x0-10, yzoom*y0, x0+xzoom*num, yzoom*y0, 150, 150, 150 );//０度ライン
+    line( ctx, x0-10, yzoom*(y0-30), x0+xzoom*num, yzoom*(y0-30), 150, 150, 150 );//猛暑日ライン
+    var count = 0;
+    for (var j = 0; j <= 2; j++) {
+        if (pla[j].checked) {
+            //凡例
+            ctx.fillStyle = "rgb(200,200,200)";
+            ctx.fillRect(x0+20, yzoom*(y0-42)+30*(count), 150, 30 );
+            line( ctx, x0+25, yzoom*(y0-42+3)+30*(count), x0+100, yzoom*(y0-42+3)+30*(count), col[j][0], col[j][1] , col[j][2] );//3*yzoom=3*5=15
+            ctx.strokeStyle = "rgb(0,0,0)";
+            ctx.font="16px sans-serif";
+            ctx.strokeText( pla[j].value, x0+120, yzoom*(y0-42+5)-2+30*(count));
+            //グラフの描画
+            for (var i = 3; i < result.length-1; i++) {
+                var x1 = x0+xzoom*(i-1);
+                var x2 = x0+xzoom*i;
+                var y1 = y0-Number(result[i-1][4*j+3]);
+                var y2 = y0-Number(result[i][4*j+3]);
+                line( ctx, x1, yzoom*y1, x2, yzoom*y2, col[j][0], col[j][1] , col[j][2] );
+            }
+            count+=1;
+        }
+    }
+
+}//----temp
+function line( ctx, x1, y1, x2, y2, r, g, b ) {
+    ctx.strokeStyle = "rgb("+r+","+g+","+b+")";
+    ctx.beginPath();
+    ctx.moveTo(x1,y1);
+    ctx.lineTo(x2,y2);
+    ctx.stroke();
+}
+
 
 //ニュース完成していません
 function news() {
@@ -136,7 +188,7 @@ function news() {
     for (var i = 0; i < result.length; i++) {
         var title=result[i][0];
         var link =result[i][1];
-        str += '<a href="'+link+'">'+title+'</a></br>';
+        str += '<a href="'+link+'" target="_blank">'+title+'</a></br>';
     }
     return str;
 }

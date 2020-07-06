@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>JSテスト</title>
+        <script>
+        //練習１
+        function draw() {
+            var cvs=document.getElementById("hcnv");
+            var ctx=cvs.getContext("2d");
+            ctx.strokeStyle = "rgb(255,0,0)";
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(1024,768);
+            ctx.lineTo(0,768);
+            ctx.closePath();
+            ctx.stroke();
+        }
+        function line( ctx, x1, y1, x2, y2, r, g, b ) {
+            ctx.strokeStyle = "rgb("+r+","+g+","+b+")";
+            ctx.beginPath();
+            ctx.moveTo(x1,y1);
+            ctx.lineTo(x2,y2);
+            ctx.stroke();
+        }
+        //練習２
+        function draw2() {
+            var cvs=document.getElementById("hcnv");
+            var ctx=cvs.getContext("2d");
+            for ( var x=0; x<=50 ; x++ ) {
+                line( ctx, 0, 15*x, 15*(50-x), 0, 0, 255, 0 );
+            }
+        }
+        //練習３
+        function draw3() {
+            var cvs=document.getElementById("hcnv");
+            var ctx=cvs.getContext("2d");
+            for ( var x=0; x<10 ; x++ ) {
+                var x1 = 25*x;
+                for ( var y=0; y<10 ; y++ ) {
+                    y1 = 25*y;
+                    ctx.fillStyle = "rgb("+x1+","+y1+",0)";
+                    ctx.fillRect(x1, y1, 25, 25 );
+                }
+            }
+        }
+        //練習４
+        var mouseX=0, mouseY=0, mouseB=0, p_mouseX, p_mouseY;
+        function mouseMove() {
+            var cvs=document.getElementById("hcnv");
+            var ctx=cvs.getContext("2d");
+            var rect = cvs.getBoundingClientRect();
+            var r = Number(paint.colr.value);
+            var g = Number(paint.colg.value);
+            var b = Number(paint.colb.value);
+            p_mouseX = mouseX;
+            p_mouseY = mouseY;
+            mouseX = event.pageX - rect.left;
+            mouseY = event.pageY - rect.top;
+            if (mouseB == 0){
+                
+                return;
+            }
+            line(ctx, p_mouseX, p_mouseY, mouseX, mouseY, r,g,b);
+            ctx.fillRect(p_mouseX, p_mouseY, 25, 25);
+        }
+        function draw4() {
+            var cvs=document.getElementById("hcnv");
+            var ctx=cvs.getContext("2d");
+            ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
+        }//---draw4
+        function draw5(idname) {
+            var obj = document.getElementById(idname);
+            var r = Number(paint.colr.value);
+            var g = Number(paint.colg.value);
+            var b = Number(paint.colb.value);
+            obj.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+        }//---draw5
+        </script>
+    </head>
+    <body>
+        <form name="paint">
+            <label><input type="range" name="colr" min="0" max="255" value="0">R</label>
+            <label><input type="range" name="colg" min="0" max="255" value="0">G</label>
+            <label><input type="range" name="colb" min="0" max="255" value="0">B</label>
+            <input id="target" type="button" value="カラーサンプル!" onclick="draw5('target')">
+            <br>
+            <input type="button" value="画面クリア!" onclick="draw4()">
+        </form>
+        <canvas id="hcnv" width="1024" height="768" onMousemove="mouseMove()" onMousedown="mouseB=1;" onMouseup="mouseB=0;"></canvas>
+    </body>
+</html>

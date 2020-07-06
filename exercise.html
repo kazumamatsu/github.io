@@ -190,10 +190,29 @@
                    <h3>実行ボタン</h3>
                    <input type="button" name="" value="go!!" onclick="weather()">
                    <h3>結果の表示エリア</h3>
-                   <textarea name="txt" rows="10" cols="100"></textarea>
+                   <textarea name="txt" rows="10" cols="60"></textarea>
                    <br>
                    <input type="button" value="download" onClick="downloadText('result.txt',f0624.txt.value);">
                </form>
+           </div>
+           <hr>
+           <div id="e0701" class="exercise0701">
+               <li>7月 1日課題</li>
+               <form name="f0701">
+                   <h3>表示したい場所</h3>
+                   <label><input type="checkbox" name="pla1" value="彦根">彦根</label>
+                   <label><input type="checkbox" name="pla2" value="那覇">那覇</label>
+                   <label><input type="checkbox" name="pla3" value="網走">網走</label>
+                   <input type="button" value="描画!" onclick="temp()">
+               </form>
+               <canvas id="temp-cnv" width="850" height="340"></canvas>
+               <hr>
+               <p><a href="exercise0701_2.html">ペイントつーる</a></p>
+           </div>
+           <hr>
+           <div id="e0708" class="exercise0708">
+               <li>7月 8日課題</li>
+               <p><a href="exercise0708.html">3D描画</a></p>
            </div>
            <hr>
            <div class="exercise0511">
@@ -213,6 +232,8 @@
                <li><a href="#e0610">6月10日課題</a></li>
                <li><a href="#e0617">6月17日課題</a></li>
                <li><a href="#e0624">6月24日課題</a></li>
+               <li><a href="#e0701">7月 1日課題</a></li>
+               <li><a href="#e0708">7月 8日課題</a></li>
                <!-- 課題が追加されたら書き足す -->
            </ul>
        </aside>
