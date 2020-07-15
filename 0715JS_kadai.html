@@ -82,7 +82,7 @@
             sun.position.set(100*Math.sin(t/365*Math.PI),100*Math.cos(t/365*Math.PI),0);
             sun.rotation.y -= 1/365;
             earth.position.set(2000*Math.sin(t/365*Math.PI),0,-2000*Math.cos(t/365*Math.PI));
-            //earth.rotation.y += 2*Math.PI/20;
+            //earth.rotation.y += 2*Math.PI/10;
             moon.position.set(400*Math.sin(t/27*Math.PI),0,-400*Math.cos(t/27*Math.PI));
             renderer.render( scene, camera );
             var rot = mouseX * 2 * Math.PI;
