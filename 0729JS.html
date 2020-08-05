@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>three.js app test</title>
+        <script src="three.js"></script>
+    </head>
+    <body>
+        <script>
+        //--初期化----
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera( 70, 1000/500,0.1,10000 );
+        var renderer = new THREE.WebGLRenderer();
+        var loader = new THREE.TextureLoader();
+        var light = new THREE.AmbientLight(0xFFFFFF, 2.0);
+        scene.add( light );
+        var mouseX = 0, mouseY = 0, mouseB = 0;
+        var u=0, v=0;
+        document.addEventListener("mousemove", (event) => {
+            var rect = event.target.getBoundingClientRect();
+            u = (event.clientX - rect.left)*2 / (rect.right - rect.left) - 1;
+            v = (event.clientY - rect.top)*2 / (rect.top - rect.bottom) + 1;
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+        document.addEventListener("mousedown", (event) => {mouseB = 1;});
+        document.addEventListener("mouseup", (event) => {mouseB = 0;});
+        renderer.setSize(1000, 500 );
+        document.body.appendChild( renderer.domElement );
+        camera.position.set(0,0,0);
+        function detectObject( camera, target_list, exception, u, v ) {
+            var vector = new THREE.Vector3( u, v ,1);
+            vector.unproject(camera);
+            var ray = new THREE.Raycaster( camera.position,vector.sub( camera.position ).normalize() );
+            var obj_list = ray.intersectObjects( target_list);
+            for (var j=0 ; j<obj_list.length ; j++){if (obj_list[j].object != exception ){ return obj_list[j].object;} }
+            return null;
+        }
+        //--物体生成----
+        var URL='https://www.gakujutsu.co.jp/text/isbn978-4-7806-0708-6/file/';
+        var texture = [];
+        var loader = new THREE.TextureLoader();
+        texture.push( loader.load(URL+ '1.jpg') ); // texture[0]
+        texture.push( loader.load(URL+ '2.jpg') ); // texture[1]
+        texture.push( loader.load(URL+ '3.jpg') ); // texture[2]
+        texture.push( loader.load(URL+ '4.jpg') ); // texture[3]
+
+        //データ
+        var vpositions = [[0,0,0],[-500,0,0],[-1000,0,1000],[-1000,0,2500]];
+        var vrot = [0 ,0 ,Math.PI/2,Math.PI/2];
+        var world = [];
+        for (var i = 0; i < vpositions.length; i++) {
+            var geometry = new THREE.SphereGeometry(30, 100, 100);
+            var material = new THREE.MeshStandardMaterial( { map:  texture[i], side: THREE.DoubleSide });;
+            world[i] = new THREE.Mesh( geometry, material );
+            world[i].position.set(vpositions[i][0],vpositions[i][1],vpositions[i][2]);
+            world[i].rotation.y=vrot[i];
+            scene.add( world[i] );
+        }
+        //看板
+        var tannotation = [];
+        tannotation.push( loader.load('images/ano_1.jpg') ); // tannotation[0]
+        //tannotation.push( loader.load('images/ano_2.jpg') ); // tannotation[1]
+        var x=[500,600,500,500], y=[398,398,398,398];
+        for (var i = 0; i < 4; i++) {
+            var theta=360*x[i]/1920;
+            var phi=90-180*y[i]/960
+            theta=theta*Math.PI/180;
+            phi=phi*Math.PI/180;
+            var a=-Math.cos(theta)*Math.cos(phi);
+            var b=Math.sin(phi);
+            var c=Math.sin(theta)*Math.cos(phi);
+            var geometry = new THREE.BoxGeometry(7, 3, 0.01);
+            var material = new THREE.MeshStandardMaterial( { map: tannotation[0] } );
+            var anotation = new THREE.Mesh( geometry, material );
+            anotation.position.set( a*20, b*20, c*20 );
+            anotation.lookAt( new THREE.Vector3(0,0,0) );
+            world[i].add( anotation );
+        }
+
+
+        //--レンダリングループ---------
+        var rot=0, h=0;
+        var p_mouseX = 0, p_mouseY = 0, p_mouseB = 0;
+        var target_list = [];
+        for (var i = 0; i < world.length; i++) {
+            target_list.push( world[i] );
+        }
+        var current_view = world[0];
+        world[0].scale.set(100,100,100);
+        function draw() {
+            requestAnimationFrame( draw );
+            renderer.render( scene, camera );
+            camera.lookAt(new THREE.Vector3(Math.sin(rot)*10000,Math.sin(h)*10000,Math.cos(rot)*10000));
+            if (mouseB==1) {
+                rot -= (p_mouseX - mouseX)*0.005;
+                h -= (p_mouseY - mouseY)*0.005;
+                if (h>=3.14/2) { h = 3.14/2; }
+                if (h<=-3.14/2) { h = -3.14/2; }
+            }
+            if (mouseB==1 && p_mouseB==0) {
+                var nextviewpoint = detectObject( camera, target_list, current_view, u, v );
+                if (nextviewpoint!=null) {
+                    nextviewpoint.scale.set(100,100,100);//1. 次の視点位置の球のスケールを100倍にする
+                    current_view.scale.set(1,1,1);//2. 現在の視点位置の球のスケールを1倍に戻す
+                    camera.position.set(nextviewpoint.position.x,nextviewpoint.position.y,nextviewpoint.position.z);//3. カメラ位置を次の視点位置に移動する
+                    current_view = nextviewpoint;
+                }
+            }
+            p_mouseX=mouseX;
+            p_mouseY=mouseY;
+            p_mouseB=mouseB;
+        };
+        draw();
+        </script>
+        <hr>
+        <a style="font-size:2rem;" href="exercise.html">戻る</a>
+    </body>
+</html>
