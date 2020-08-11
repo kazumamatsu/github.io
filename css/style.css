@@ -521,6 +521,12 @@ input[type="button"]:hover{
 	text-align: center;
 }
 
+/*exercise0805
+-----------------------*/
+.content0805{
+	margin: 0 100px;
+}
+
 /*contact
 -----------------------*/
 #contact {
