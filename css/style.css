@@ -149,9 +149,6 @@ img {
     top: 0;
     padding-top: 10px;
 }
-.today-date span{
-
-}
 .home-content .page-title {
 	font-size: 3.5rem;
 	font-family: "Philosopher", serif;
@@ -298,7 +295,7 @@ img {
 	color: rgb(0, 0, 0);
 }
 .introduction{
-	margin: auto 5% 0px;
+	margin: auto 2% 0px;
 	font-size: 1.5rem;
 }
 .item{
